@@ -61,7 +61,7 @@ const Login = () => {
     <div className="min-h-screen flex items-center justify-center bg-base-100">
       <div className="bg-white shadow-md rounded-lg p-8 max-w-md w-[90%] space-y-6 border border-primary">
         <h2 className="text-3xl font-bold text-center text-primary">
-          Welcome !
+          Welcome to Login
         </h2>
         <p className="text-center text-gray-500">
           Please login to access your RateDeck dashboard and manage services.

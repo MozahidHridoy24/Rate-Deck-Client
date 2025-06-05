@@ -1,23 +1,10 @@
 @import "tailwindcss";
-@plugin "daisyui";
-
-
+@plugin "daisyui" {
+  themes: light --default;
+}
 @plugin "daisyui/theme" {
- themes: [
-      {
-       
-          "primary": "#219EBC",     // custom primary color
-          "secondary": "#D4A373",   // custom secondary color
-          "accent": "#8ECAE6",
-          "neutral": "#1F2937",
-          "base-100": "#FFFFFF",
-          "info": "#0EA5E9",
-          "success": "#10B981",
-          "warning": "#FBBF24",
-          "error": "#EF4444",
-        
-      },
-      "light",  // fallback theme
-    ]
-    darkTheme: "dark", // optional
-  }
+  name: "light";
+  default: true;
+  --color-primary: #66023c;
+  --color-secondary: #ed7a9b;
+}
