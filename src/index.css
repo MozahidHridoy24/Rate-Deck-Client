@@ -5,7 +5,7 @@
 @plugin "daisyui/theme" {
  themes: [
       {
-        ratedeck: {
+       
           "primary": "#219EBC",     // custom primary color
           "secondary": "#D4A373",   // custom secondary color
           "accent": "#8ECAE6",
@@ -15,9 +15,9 @@
           "success": "#10B981",
           "warning": "#FBBF24",
           "error": "#EF4444",
-        },
+        
       },
       "light",  // fallback theme
-    ],
+    ]
     darkTheme: "dark", // optional
   }
