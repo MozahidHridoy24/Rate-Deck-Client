@@ -6,12 +6,12 @@ import { getAuth } from "firebase/auth";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyBk5WkrgWQaJuW8XJyo41q1b7dQKVN0h1A",
-  authDomain: "rate-deck.firebaseapp.com",
-  projectId: "rate-deck",
-  storageBucket: "rate-deck.firebasestorage.app",
-  messagingSenderId: "570572322290",
-  appId: "1:570572322290:web:5a57c2e2ca7d262855676b",
+  apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
+  authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN,
+  projectId: import.meta.env.VITE_FIREBASE_PROJECT_ID,
+  storageBucket: import.meta.env.VITE_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: import.meta.env.VITE_FIREBASE_MESSAGING_SENDER_ID,
+  appId: import.meta.env.VITE_FIREBASE_APP_ID,
 };
 
 // Initialize Firebase

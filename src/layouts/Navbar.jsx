@@ -78,7 +78,7 @@ const Navbar = () => {
   );
 
   return (
-    <div className="navbar bg-base-100 shadow-md px-4 md:px-8 sticky top-0 z-50">
+    <div className="navbar bg-base-100 shadow-lg px-4 md:px-8 sticky top-0 z-50">
       {/* Logo */}
       <div className="navbar-start">
         <Link to="/" className="text-xl font-bold text-primary">
@@ -111,7 +111,7 @@ const Navbar = () => {
             </div>
             <button
               onClick={handleLogout}
-              className="btn btn-sm btn-outline hidden md:flex items-center gap-1"
+              className="btn btn-sm btn-outline hidden md:flex items-center gap-1 hover:bg-secondary hover:text-white"
             >
               <FaSignOutAlt /> Logout
             </button>
