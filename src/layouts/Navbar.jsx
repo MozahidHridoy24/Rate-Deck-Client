@@ -21,29 +21,54 @@ const Navbar = () => {
   const navLinks = (
     <>
       <li>
-        <NavLink to="/" className="font-medium">
+        <NavLink
+          to="/"
+          className={({ isActive }) =>
+            `font-medium ${isActive ? "underline text-secondary" : ""}`
+          }
+        >
           Home
         </NavLink>
       </li>
       <li>
-        <NavLink to="/services" className="font-medium">
+        <NavLink
+          to="/services"
+          className={({ isActive }) =>
+            `font-medium ${isActive ? "underline text-secondary" : ""}`
+          }
+        >
           Services
         </NavLink>
       </li>
       {user && (
         <>
           <li>
-            <NavLink to="/add-service" className="font-medium">
+            <NavLink
+              to="/add-service"
+              className={({ isActive }) =>
+                `font-medium ${isActive ? "underline text-secondary" : ""}`
+              }
+            >
               Add Service
             </NavLink>
           </li>
           <li>
-            <NavLink to="/my-services" className="font-medium">
+            <NavLink
+              to="/my-services"
+              className={({ isActive }) =>
+                `font-medium ${isActive ? "underline text-secondary" : ""}`
+              }
+            >
               My Services
             </NavLink>
           </li>
           <li>
-            <NavLink to="/my-reviews" className="font-medium">
+            <NavLink
+              to="/my-reviews"
+              className={({ isActive }) =>
+                `font-medium ${isActive ? "underline text-secondary" : ""}`
+              }
+            >
               My Reviews
             </NavLink>
           </li>
@@ -62,14 +87,14 @@ const Navbar = () => {
       </div>
 
       {/* Desktop Menu */}
-      <div className="navbar-center hidden lg:flex">
+      <div className="navbar-center hidden md:flex">
         <ul className="menu menu-horizontal px-1 gap-1">{navLinks}</ul>
       </div>
 
       {/* Right Section */}
       <div className="navbar-end gap-3">
         {user ? (
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-5">
             <div
               className="tooltip tooltip-bottom"
               data-tip={user.displayName || "User"}
@@ -86,16 +111,16 @@ const Navbar = () => {
             </div>
             <button
               onClick={handleLogout}
-              className="btn btn-sm btn-outline flex items-center gap-1"
+              className="btn btn-sm btn-outline hidden md:flex items-center gap-1"
             >
               <FaSignOutAlt /> Logout
             </button>
           </div>
         ) : (
-          <div className="flex gap-2">
+          <div className="hidden md:flex gap-2">
             <Link
               to="/login"
-              className="btn btn-sm btn-outline flex items-center gap-1"
+              className="btn btn-sm btn-outline flex items-center gap-1 hover:bg-secondary"
             >
               <FaSignInAlt /> Login
             </Link>
@@ -110,9 +135,9 @@ const Navbar = () => {
       </div>
 
       {/* Mobile Dropdown */}
-      <div className="dropdown dropdown-end lg:hidden">
+      <div className="dropdown dropdown-end md:hidden">
         <label tabIndex={0} className="btn btn-ghost lg:hidden">
-          <FaBars className="text-xl" />
+          <FaBars className="text-xl text-primary" />
         </label>
         <ul
           tabIndex={0}
@@ -132,12 +157,12 @@ const Navbar = () => {
             <>
               <li>
                 <Link to="/login" className="flex items-center gap-1">
-                  <FaSignInAlt /> Login
+                  Login
                 </Link>
               </li>
               <li>
                 <Link to="/register" className="flex items-center gap-1">
-                  <FaUserPlus /> Register
+                  Register
                 </Link>
               </li>
             </>

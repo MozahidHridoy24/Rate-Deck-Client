@@ -99,7 +99,7 @@ const Login = () => {
 
         <button
           onClick={handleGoogleLogin}
-          className="btn w-full border border-gray-300 bg-secondary text-white hover:bg-gray-500"
+          className="btn w-full border border-gray-300 bg-secondary text-white hover:shadow-lg"
         >
           <FcGoogle size={20} className="mr-2" />
           Continue with Google
