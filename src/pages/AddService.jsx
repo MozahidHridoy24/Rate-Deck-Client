@@ -32,7 +32,7 @@ const AddService = () => {
 
     try {
       const res = await axios.post(
-        "http://localhost:3000/services",
+        `${import.meta.env.VITE_API_URL}/services`,
         fullService
       );
       if (res.data.insertedId) {
@@ -49,6 +49,7 @@ const AddService = () => {
         Add New Service
       </h2>
       <form onSubmit={handleSubmit} className="grid grid-cols-1 gap-4">
+        <label className="font-medium">Service Image URL</label>
         <input
           type="text"
           name="image"
@@ -58,6 +59,8 @@ const AddService = () => {
           className="input input-bordered w-full"
           required
         />
+
+        <label className="font-medium">Service Title</label>
         <input
           type="text"
           name="title"
@@ -67,6 +70,8 @@ const AddService = () => {
           className="input input-bordered w-full"
           required
         />
+
+        <label className="font-medium">Company Name</label>
         <input
           type="text"
           name="company"
@@ -76,6 +81,8 @@ const AddService = () => {
           className="input input-bordered w-full"
           required
         />
+
+        <label className="font-medium">Company Website</label>
         <input
           type="text"
           name="website"
@@ -85,6 +92,8 @@ const AddService = () => {
           className="input input-bordered w-full"
           required
         />
+
+        <label className="font-medium">Description</label>
         <textarea
           name="description"
           value={service.description}
@@ -93,6 +102,8 @@ const AddService = () => {
           className="textarea textarea-bordered w-full"
           required
         />
+
+        <label className="font-medium">Category</label>
         <input
           type="text"
           name="category"
@@ -102,6 +113,8 @@ const AddService = () => {
           className="input input-bordered w-full"
           required
         />
+
+        <label className="font-medium">Price</label>
         <input
           type="number"
           name="price"
@@ -111,6 +124,7 @@ const AddService = () => {
           className="input input-bordered w-full"
           required
         />
+
         <button type="submit" className="btn btn-primary w-full mt-4">
           Add Service
         </button>

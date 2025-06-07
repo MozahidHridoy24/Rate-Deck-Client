@@ -5,6 +5,9 @@ import Home from "../pages/Home";
 import Login from "../pages/Login";
 import Register from "../pages/Register";
 import AddService from "../pages/AddService";
+import axios from "axios";
+import AllServices from "../pages/AllServices";
+import PrivateRoute from "./PrivateRoute";
 
 export const router = createBrowserRouter([
   {
@@ -26,7 +29,20 @@ export const router = createBrowserRouter([
       },
       {
         path: "/add-service",
-        Component: AddService,
+        element: (
+          <PrivateRoute>
+            <AddService></AddService>
+          </PrivateRoute>
+        ),
+      },
+      {
+        path: "/all-services",
+        loader: () => axios(`${import.meta.env.VITE_API_URL}/services`),
+        element: (
+          <PrivateRoute>
+            <AllServices></AllServices>
+          </PrivateRoute>
+        ),
       },
     ],
   },

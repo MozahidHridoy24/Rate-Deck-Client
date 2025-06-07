@@ -32,12 +32,12 @@ const Navbar = () => {
       </li>
       <li>
         <NavLink
-          to="/services"
+          to="/all-services"
           className={({ isActive }) =>
             `font-medium ${isActive ? "underline text-secondary" : ""}`
           }
         >
-          Services
+          All Services
         </NavLink>
       </li>
       {user && (
