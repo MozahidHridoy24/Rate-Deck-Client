@@ -8,6 +8,7 @@ import AddService from "../pages/AddService";
 import axios from "axios";
 import AllServices from "../pages/AllServices";
 import PrivateRoute from "./PrivateRoute";
+import ServiceDetails from "../pages/ServiceDetails";
 
 export const router = createBrowserRouter([
   {
@@ -38,11 +39,13 @@ export const router = createBrowserRouter([
       {
         path: "/all-services",
         loader: () => axios(`${import.meta.env.VITE_API_URL}/services`),
-        element: (
-          <PrivateRoute>
-            <AllServices></AllServices>
-          </PrivateRoute>
-        ),
+        Component: AllServices,
+      },
+      {
+        path: "/services/:id",
+        loader: ({ params }) =>
+          axios(`${import.meta.env.VITE_API_URL}/services/${params.id}`),
+        Component: ServiceDetails,
       },
     ],
   },
