@@ -10,6 +10,7 @@ import AllServices from "../pages/AllServices";
 import PrivateRoute from "./PrivateRoute";
 import ServiceDetails from "../pages/ServiceDetails";
 import MyServices from "../pages/MyServices";
+import MyReviews from "../pages/MyReviews";
 
 export const router = createBrowserRouter([
   {
@@ -18,6 +19,7 @@ export const router = createBrowserRouter([
     errorElement: <ErrorPage></ErrorPage>,
     children: [
       {
+        index: true,
         path: "/",
         Component: Home,
       },
@@ -42,6 +44,14 @@ export const router = createBrowserRouter([
         element: (
           <PrivateRoute>
             <MyServices></MyServices>
+          </PrivateRoute>
+        ),
+      },
+      {
+        path: "/my-reviews",
+        element: (
+          <PrivateRoute>
+            <MyReviews></MyReviews>
           </PrivateRoute>
         ),
       },

@@ -20,10 +20,10 @@ const Footer = () => {
           <Link to="/" className="link link-hover">
             Home
           </Link>
-          <Link to="/services" className="link link-hover">
+          <Link to="/all-services" className="link link-hover">
             Services
           </Link>
-          <Link to="/reviews" className="link link-hover">
+          <Link to="/my-reviews" className="link link-hover">
             Reviews
           </Link>
           <Link to="/contact" className="link link-hover">
