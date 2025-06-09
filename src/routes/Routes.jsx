@@ -9,6 +9,7 @@ import axios from "axios";
 import AllServices from "../pages/AllServices";
 import PrivateRoute from "./PrivateRoute";
 import ServiceDetails from "../pages/ServiceDetails";
+import MyServices from "../pages/MyServices";
 
 export const router = createBrowserRouter([
   {
@@ -33,6 +34,14 @@ export const router = createBrowserRouter([
         element: (
           <PrivateRoute>
             <AddService></AddService>
+          </PrivateRoute>
+        ),
+      },
+      {
+        path: "/my-services",
+        element: (
+          <PrivateRoute>
+            <MyServices></MyServices>
           </PrivateRoute>
         ),
       },
