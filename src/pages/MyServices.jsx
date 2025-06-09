@@ -57,7 +57,7 @@ const MyServices = () => {
     e.preventDefault();
 
     try {
-      await axios.patch(
+      await axios.put(
         `${import.meta.env.VITE_API_URL}/services/${selectedService._id}`,
         updatedData
       );

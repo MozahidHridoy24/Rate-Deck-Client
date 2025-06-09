@@ -28,7 +28,6 @@ const AddService = () => {
       userEmail: user?.email,
       date: new Date().toISOString(), // Automatically adds current date
     };
-    console.log(fullService);
 
     try {
       const res = await axios.post(
