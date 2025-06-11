@@ -53,6 +53,7 @@ const ServiceDetails = () => {
 
     const review = {
       serviceId: data._id,
+      serviceTitle: data.title,
       userEmail: user.email,
       userName: user.displayName,
       userPhoto: user.photoURL,

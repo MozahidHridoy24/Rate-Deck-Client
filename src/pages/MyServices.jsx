@@ -78,53 +78,58 @@ const MyServices = () => {
   if (loading) return <LoadingSpinner></LoadingSpinner>;
 
   return (
-    <div className="max-w-6xl mx-auto p-4">
+    <div className="max-w-6xl mx-auto md:w-11/12 p-4">
       <h2 className="text-3xl font-bold mb-6 text-primary">My Services</h2>
 
       {services.length === 0 ? (
         <p className="text-gray-500">You haven't added any services yet.</p>
       ) : (
-        <div className="overflow-x-auto">
-          <table className="table w-full bg-white shadow rounded">
-            <thead>
-              <tr className="bg-base-200 text-left">
-                <th>Title</th>
-                <th>Category</th>
-                <th>Price</th>
-                <th>Actions</th>
+        <div className=" overflow-x-auto">
+          <table className="table w-full table-auto bg-base-100 shadow rounded-lg">
+            <thead className="bg-base-200 text-center">
+              <tr className="text-sm text-primary">
+                <th className="break-words">Title</th>
+                <th className="break-words">Category</th>
+                <th className="break-words">Price</th>
+                <th className="break-words">Actions</th>
               </tr>
             </thead>
             <tbody>
               {services.map((s) => (
-                <tr key={s._id}>
-                  <td>{s.title}</td>
-                  <td>{s.category}</td>
-                  <td>${s.price}</td>
-                  <td className="space-x-2">
-                    <button
-                      onClick={() => {
-                        setSelectedService(s);
-                        setUpdatedData({
-                          image: s.image,
-                          title: s.title,
-                          company: s.company,
-                          website: s.website,
-                          description: s.description,
-                          category: s.category,
-                          price: s.price,
-                        });
-                      }}
-                      className="btn btn-sm btn-info"
-                    >
-                      Update
-                    </button>
-
-                    <button
-                      onClick={() => handleDelete(s._id)}
-                      className="btn btn-sm btn-error"
-                    >
-                      Delete
-                    </button>
+                <tr key={s._id} className="text-sm text-center align-top">
+                  <td className="break-words  max-w-[140px] font-semibold text-base-content">
+                    {s.title}
+                  </td>
+                  <td className="break-words max-w-[120px] text-base-content">
+                    {s.category}
+                  </td>
+                  <td className="text-base-content">${s.price}</td>
+                  <td className="break-words">
+                    <div className="flex flex-wrap gap-2 justify-center">
+                      <button
+                        onClick={() => {
+                          setSelectedService(s);
+                          setUpdatedData({
+                            image: s.image,
+                            title: s.title,
+                            company: s.company,
+                            website: s.website,
+                            description: s.description,
+                            category: s.category,
+                            price: s.price,
+                          });
+                        }}
+                        className="btn btn-xs btn-info"
+                      >
+                        Update
+                      </button>
+                      <button
+                        onClick={() => handleDelete(s._id)}
+                        className="btn btn-xs btn-error"
+                      >
+                        Delete
+                      </button>
+                    </div>
                   </td>
                 </tr>
               ))}

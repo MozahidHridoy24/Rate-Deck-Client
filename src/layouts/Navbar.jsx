@@ -82,7 +82,7 @@ const Navbar = () => {
       {/* Logo */}
       <div className="navbar-start">
         <Link to="/" className="text-xl font-bold text-primary">
-          RateDeck
+          Rate<span className="text-secondary">Deck</span>
         </Link>
       </div>
 

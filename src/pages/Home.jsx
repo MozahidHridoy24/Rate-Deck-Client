@@ -4,6 +4,8 @@ import LoadingSpinner from "../components/LoadingSpinner";
 import ServiceCard from "../components/ServiceCard";
 import Banner from "../components/Banner";
 import MeetOurPartner from "../components/MeetOurPartner";
+import { motion } from "motion/react";
+import { Link } from "react-router";
 
 const Home = () => {
   const [services, setServices] = useState([]);
@@ -35,7 +37,7 @@ const Home = () => {
       {loading ? (
         <LoadingSpinner></LoadingSpinner>
       ) : (
-        <section className="py-10 max-w-7xl mx-auto px-4">
+        <section className="py-10 max-w-7xl bg-base-200 mb-1 mx-auto px-4">
           <h2 className="text-3xl font-bold text-center mb-8 text-primary">
             Featured Services
           </h2>
@@ -48,6 +50,81 @@ const Home = () => {
       )}
       {/* Meet our partner */}
       <MeetOurPartner></MeetOurPartner>
+      {/* Extra section 1 */}
+      <section className=" bg-base-200 mt-1" id="faq">
+        <div className="max-w-7xl w-11/12 mx-auto py-10 px-4">
+          <h2 className="text-3xl font-bold text-center mb-10 text-primary">
+            Frequently Asked Questions
+          </h2>
+
+          <div className="space-y-4">
+            <div className="collapse collapse-plus bg-base-100 shadow">
+              <input type="checkbox" />
+              <div className="collapse-title text-lg font-medium text-primary">
+                What is RateDeck?
+              </div>
+              <div className="collapse-content text-gray-600">
+                <p>
+                  RateDeck is a platform where users can discover and share
+                  reviews about different services to make informed decisions.
+                </p>
+              </div>
+            </div>
+
+            <div className="collapse collapse-plus bg-base-100 shadow">
+              <input type="checkbox" />
+              <div className="collapse-title text-lg font-medium text-primary">
+                How do I leave a review?
+              </div>
+              <div className="collapse-content text-gray-600">
+                <p>
+                  To leave a review, sign in and navigate to a service’s detail
+                  page. You'll find a review form to submit your feedback.
+                </p>
+              </div>
+            </div>
+
+            <div className="collapse collapse-plus bg-base-100 shadow">
+              <input type="checkbox" />
+              <div className="collapse-title text-lg font-medium text-primary">
+                Can I edit or delete my reviews?
+              </div>
+              <div className="collapse-content text-gray-600">
+                <p>
+                  Yes, you can manage your reviews from your dashboard under the
+                  "My Reviews" section.
+                </p>
+              </div>
+            </div>
+
+            <div className="collapse collapse-plus bg-base-100 shadow">
+              <input type="checkbox" />
+              <div className="collapse-title text-lg font-medium text-primary">
+                Are reviews moderated?
+              </div>
+              <div className="collapse-content text-gray-600">
+                <p>
+                  All reviews are subject to moderation to ensure they comply
+                  with community standards and remain constructive.
+                </p>
+              </div>
+            </div>
+
+            <div className="collapse collapse-plus bg-base-100 shadow">
+              <input type="checkbox" />
+              <div className="collapse-title text-lg font-medium text-primary">
+                Is RateDeck free to use?
+              </div>
+              <div className="collapse-content text-gray-600">
+                <p>
+                  Absolutely. You can use RateDeck to browse and post reviews
+                  without any cost.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
     </div>
   );
 };
