@@ -6,6 +6,7 @@ import Banner from "../components/Banner";
 import MeetOurPartner from "../components/MeetOurPartner";
 import { motion } from "motion/react";
 import { Link } from "react-router";
+import SuccessStories from "../components/SuccessStories";
 
 const Home = () => {
   const [services, setServices] = useState([]);
@@ -38,19 +39,23 @@ const Home = () => {
         <LoadingSpinner></LoadingSpinner>
       ) : (
         <section className="py-10 max-w-7xl bg-base-200 mb-1 mx-auto px-4">
-          <h2 className="text-3xl font-bold text-center mb-8 text-primary">
-            Featured Services
-          </h2>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {services.map((service) => (
-              <ServiceCard key={service._id} service={service}></ServiceCard>
-            ))}
+          <div className="w-11/12 mx-auto">
+            <h2 className="text-3xl font-bold text-center mb-8 text-primary">
+              Featured Services
+            </h2>
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {services.map((service) => (
+                <ServiceCard key={service._id} service={service}></ServiceCard>
+              ))}
+            </div>
           </div>
         </section>
       )}
       {/* Meet our partner */}
       <MeetOurPartner></MeetOurPartner>
-      {/* Extra section 1 */}
+      {/* Extra section 1 Success Stories */}
+      <SuccessStories></SuccessStories>
+      {/* Extra section 2 FAQ*/}
       <section className=" bg-base-200 mt-1" id="faq">
         <div className="max-w-7xl w-11/12 mx-auto py-10 px-4">
           <h2 className="text-3xl font-bold text-center mb-10 text-primary">

@@ -80,16 +80,18 @@ const MyServices = () => {
   if (loading) return <LoadingSpinner></LoadingSpinner>;
 
   return (
-    <div className="max-w-6xl mx-auto md:w-11/12 p-4">
-      <h2 className="text-3xl font-bold mb-6 text-primary">My Services</h2>
+    <div className="max-w-6xl mx-auto md:w-11/12 p-4 mb-10">
+      <h2 className="text-3xl font-bold mb-6 text-primary text-center">
+        My Services
+      </h2>
 
       {services.length === 0 ? (
         <p className="text-gray-500">You haven't added any services yet.</p>
       ) : (
         <div className=" overflow-x-auto">
           <table className="table w-full table-auto bg-base-100 shadow rounded-lg">
-            <thead className="bg-base-200 text-center">
-              <tr className="text-sm text-primary">
+            <thead className="bg-secondary ">
+              <tr className="text-lg text-primary">
                 <th className="break-words">Title</th>
                 <th className="break-words">Category</th>
                 <th className="break-words">Price</th>
@@ -98,7 +100,7 @@ const MyServices = () => {
             </thead>
             <tbody>
               {services.map((s) => (
-                <tr key={s._id} className="text-sm text-center align-top">
+                <tr key={s._id} className="text-sm  align-top">
                   <td className="break-words  max-w-[140px] font-semibold text-base-content">
                     {s.title}
                   </td>
@@ -107,7 +109,7 @@ const MyServices = () => {
                   </td>
                   <td className="text-base-content">${s.price}</td>
                   <td className="break-words">
-                    <div className="flex flex-wrap gap-2 justify-center">
+                    <div className="flex flex-wrap gap-2 ">
                       <button
                         onClick={() => {
                           setSelectedService(s);
@@ -144,7 +146,7 @@ const MyServices = () => {
 
       {/* Update Modal */}
       {selectedService && (
-        <div className="fixed inset-0 bg-black bg-opacity-40 flex items-center justify-center z-50">
+        <div className="fixed inset-0 bg-black/40 backdrop-blur-sm bg-opacity-40 flex items-center justify-center z-50">
           <div className="bg-white rounded-lg p-6 w-full max-w-lg relative overflow-y-auto max-h-[90vh]">
             <h3 className="text-xl font-semibold mb-4 text-primary">
               Update Service

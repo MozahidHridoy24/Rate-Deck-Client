@@ -10,6 +10,14 @@ const AllServices = () => {
       <h2 className="text-3xl font-bold text-center text-primary mb-10">
         All Services
       </h2>
+      {/*  Search Input Field */}
+      <div className="mb-8 max-w-md mx-auto">
+        <input
+          type="text"
+          placeholder="Search by title, category, or company..."
+          className="input input-bordered w-full"
+        />
+      </div>
 
       {services.length === 0 ? (
         <p className="text-center text-gray-500">No services found.</p>

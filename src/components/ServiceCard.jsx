@@ -9,7 +9,7 @@ const ServiceCard = ({ service }) => {
       <img
         src={image}
         alt={title}
-        className="w-full h-52 object-cover rounded-t-xl"
+        className="w-full h-48 object-cover rounded-t-xl"
       />
 
       <div className="p-5 space-y-3">
