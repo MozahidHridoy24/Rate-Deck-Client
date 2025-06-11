@@ -3,6 +3,8 @@ import axios from "axios";
 import Swal from "sweetalert2";
 import { AuthContext } from "../contexts/AuthContext/AuthContext";
 import LoadingSpinner from "../components/LoadingSpinner";
+import { FaTrash } from "react-icons/fa6";
+import { FaEdit } from "react-icons/fa";
 
 const MyServices = () => {
   const { user } = use(AuthContext);
@@ -119,14 +121,16 @@ const MyServices = () => {
                             price: s.price,
                           });
                         }}
-                        className="btn btn-xs btn-info"
+                        className="btn btn-xs btn-outline btn-primary"
                       >
+                        <FaEdit />
                         Update
                       </button>
                       <button
                         onClick={() => handleDelete(s._id)}
-                        className="btn btn-xs btn-error"
+                        className="btn btn-xs btn-outline btn-secondary"
                       >
+                        <FaTrash />
                         Delete
                       </button>
                     </div>

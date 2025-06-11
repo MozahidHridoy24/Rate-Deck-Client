@@ -60,6 +60,27 @@ const MyReviews = () => {
     }
   };
 
+  // Delete a review
+  const handleDeleteReview = async (id) => {
+    const confirm = await Swal.fire({
+      title: "Delete Review?",
+      text: "You won't be able to undo this!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonText: "Yes, delete it!",
+    });
+
+    if (confirm.isConfirmed) {
+      try {
+        await axios.delete(`${import.meta.env.VITE_API_URL}/reviews/${id}`);
+        setReviews((prev) => prev.filter((r) => r._id !== id));
+        Swal.fire("Deleted!", "Review has been deleted.", "success");
+      } catch {
+        Swal.fire("Error", "Could not delete the review.", "error");
+      }
+    }
+  };
+
   if (loading) return <LoadingSpinner></LoadingSpinner>;
 
   return (
@@ -104,8 +125,8 @@ const MyReviews = () => {
                   Update
                 </button>
                 <button
-                  className="btn btn-sm btn-outline btn-error flex items-center gap-2"
-                  // onClick={() => handleDelete(review._id)}
+                  className="btn btn-sm btn-outline btn-secondary flex items-center gap-2"
+                  onClick={() => handleDeleteReview(review._id)}
                 >
                   <FaTrash />
                   Delete
