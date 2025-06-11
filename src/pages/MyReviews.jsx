@@ -3,10 +3,14 @@ import { AuthContext } from "../contexts/AuthContext/AuthContext";
 import axios from "axios";
 import LoadingSpinner from "../components/LoadingSpinner";
 import { FaEdit, FaStar, FaTrash } from "react-icons/fa";
+import Swal from "sweetalert2";
 
 const MyReviews = () => {
   const { user } = use(AuthContext);
   const [reviews, setReviews] = useState([]);
+  const [selectedReview, setSelectedReview] = useState(null);
+  const [updatedText, setUpdatedText] = useState("");
+  const [updatedRatings, setUpdatedRatings] = useState(0);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -28,6 +32,33 @@ const MyReviews = () => {
 
     fetchUserReviews();
   }, [user?.email]);
+
+  // Handle Update
+  const handleUpdateReviews = async (e) => {
+    e.preventDefault();
+    try {
+      await axios.patch(
+        `${import.meta.env.VITE_API_URL}/reviews/${selectedReview._id}`,
+        {
+          text: updatedText,
+          rating: updatedRatings,
+        }
+      );
+
+      setReviews((prev) =>
+        prev.map((r) =>
+          r._id === selectedReview._id
+            ? { ...r, text: updatedText, rating: updatedRatings }
+            : r
+        )
+      );
+
+      setSelectedReview(null);
+      Swal.fire("Updated!", "Your review was updated.", "success");
+    } catch {
+      Swal.fire("Error", "Failed to update review", "error");
+    }
+  };
 
   if (loading) return <LoadingSpinner></LoadingSpinner>;
 
@@ -63,11 +94,11 @@ const MyReviews = () => {
               <div className="flex gap-2 self-end md:self-auto">
                 <button
                   className="btn btn-sm btn-outline btn-primary flex items-center gap-2"
-                  // onClick={() => {
-                  //   setEditingReview(review);
-                  //   setUpdatedText(review.text);
-                  //   setUpdatedRating(review.rating);
-                  // }}
+                  onClick={() => {
+                    setSelectedReview(review);
+                    setUpdatedText(review.text);
+                    setUpdatedRatings(review.rating);
+                  }}
                 >
                   <FaEdit />
                   Update
@@ -82,6 +113,64 @@ const MyReviews = () => {
               </div>
             </div>
           ))}
+        </div>
+      )}
+      {/*  Update Modal */}
+      {selectedReview && (
+        <div className="fixed inset-0 bg-black/40 backdrop-blur-sm bg-opacity-40 z-50 flex justify-center items-center">
+          <div className="bg-white p-6 rounded-xl max-w-md w-full relative">
+            <h3 className="text-xl font-semibold mb-4 text-primary">
+              Update Review
+            </h3>
+            <form onSubmit={handleUpdateReviews} className="space-y-4">
+              <div>
+                <label className="block text-sm font-medium text-gray-700">
+                  Service Title
+                </label>
+                <input
+                  type="text"
+                  value={selectedReview.serviceTitle}
+                  readOnly
+                  className="input input-bordered w-full bg-gray-100"
+                />
+              </div>
+              <div>
+                <label className="block text-sm font-medium text-gray-700">
+                  Review Text
+                </label>
+                <textarea
+                  className="textarea textarea-bordered w-full"
+                  value={updatedText}
+                  onChange={(e) => setUpdatedText(e.target.value)}
+                />
+              </div>
+              <div>
+                <label className="block text-sm font-medium text-gray-700">
+                  Rating
+                </label>
+                <input
+                  type="number"
+                  min="1"
+                  max="5"
+                  className="input input-bordered w-full"
+                  value={updatedRatings}
+                  onChange={(e) => setUpdatedRatings(Number(e.target.value))}
+                />
+              </div>
+              <div className="flex justify-end gap-2 mt-4">
+                <button
+                  type="button"
+                  className="btn btn-outline"
+                  onClick={() => setSelectedReview(null)}
+                >
+                  Cancel
+                </button>
+                <button type="submit" className="btn btn-primary">
+                  Update
+                </button>
+              </div>
+            </form>
+          </div>
         </div>
       )}
     </section>
