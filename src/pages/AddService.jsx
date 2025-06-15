@@ -3,9 +3,11 @@ import Swal from "sweetalert2";
 import axios from "axios";
 import { AuthContext } from "../contexts/AuthContext/AuthContext";
 import { div } from "motion/react-client";
+import useAxiosSecure from "../hooks/useAxiosSecure";
 
 const AddService = () => {
   const { user } = use(AuthContext);
+  const axiosInstance = useAxiosSecure();
 
   const [service, setService] = useState({
     image: "",
@@ -29,13 +31,9 @@ const AddService = () => {
       userEmail: user?.email,
       date: new Date().toISOString(), // Automatically adds current date
     };
-    console.log(fullService);
 
     try {
-      const res = await axios.post(
-        `${import.meta.env.VITE_API_URL}/services`,
-        fullService
-      );
+      const res = await axiosInstance.post(`/services`, fullService);
       if (res.data.insertedId) {
         Swal.fire("Success!", "Service has been added!", "success");
       }

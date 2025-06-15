@@ -38,7 +38,7 @@ const Home = () => {
       {loading ? (
         <LoadingSpinner></LoadingSpinner>
       ) : (
-        <section className="py-10 max-w-7xl bg-base-200 mb-1 mx-auto px-4">
+        <section className="py-10 bg-base-200 mb-1 mx-auto px-4">
           <div className="w-11/12 mx-auto">
             <h2 className="text-3xl font-bold text-center mb-8 text-primary">
               Featured Services
@@ -57,7 +57,7 @@ const Home = () => {
       <SuccessStories></SuccessStories>
       {/* Extra section 2 FAQ*/}
       <section className=" bg-base-200 mt-1" id="faq">
-        <div className="max-w-7xl w-11/12 mx-auto py-10 px-4">
+        <div className=" w-11/12 mx-auto py-10 px-4">
           <h2 className="text-3xl font-bold text-center mb-10 text-primary">
             Frequently Asked Questions
           </h2>

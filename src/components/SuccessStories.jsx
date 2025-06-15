@@ -28,7 +28,7 @@ const testimonials = [
 const SuccessStories = () => {
   return (
     <section className="py-10 bg-base-200 mt-1">
-      <div className="max-w-6xl mx-auto px-4 text-center">
+      <div className="w-11/12 mx-auto px-4 text-center">
         <h2 className="text-3xl font-bold text-primary mb-10">
           Success Stories
         </h2>

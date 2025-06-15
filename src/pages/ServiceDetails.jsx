@@ -1,11 +1,12 @@
 import React, { use, useEffect, useState } from "react";
-import { useLoaderData } from "react-router";
+import { useLoaderData, useNavigate } from "react-router";
 import { AuthContext } from "../contexts/AuthContext/AuthContext";
 import axios from "axios";
 import Swal from "sweetalert2";
 import Rating from "react-rating";
 import { FaStar } from "react-icons/fa";
 import LoadingSpinner from "../components/LoadingSpinner";
+import useAxiosSecure from "../hooks/useAxiosSecure";
 
 const ServiceDetails = () => {
   const { user, loading } = use(AuthContext);
@@ -14,6 +15,8 @@ const ServiceDetails = () => {
     data || {};
   const [reviews, setReviews] = useState([]);
   const [newReview, setNewReview] = useState({ text: "", rating: 0 });
+  const navigate = useNavigate();
+  const axiosInstance = useAxiosSecure();
 
   // get reviews
   const fetchReviews = async () => {
@@ -40,7 +43,9 @@ const ServiceDetails = () => {
         "Login Required",
         "Please login to submit a review.",
         "warning"
-      );
+      ).then(() => {
+        navigate("/login");
+      });
     }
 
     if (newReview.rating === 0) {
@@ -63,7 +68,7 @@ const ServiceDetails = () => {
     };
     // POST reviews data
     try {
-      await axios.post(`${import.meta.env.VITE_API_URL}/reviews`, review);
+      await axiosInstance.post(`/reviews`, review);
       Swal.fire("Review Added!", "Thank you for your feedback.", "success");
       setNewReview({ text: "", rating: 0 });
       fetchReviews();

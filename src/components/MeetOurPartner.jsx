@@ -35,7 +35,7 @@ const duplicatedPartners = [...partners, ...partners];
 const MeetOurPartner = () => {
   return (
     <section className="py-10 overflow-hidden bg-base-200" id="partners">
-      <div className="max-w-6xl mx-auto px-4 text-center">
+      <div className="w-11/12 mx-auto px-4 text-center">
         <motion.h2
           className="text-3xl font-bold text-primary mb-10"
           initial={{ opacity: 0, y: -20 }}

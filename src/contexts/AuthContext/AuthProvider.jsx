@@ -11,6 +11,7 @@ import {
   updateProfile,
 } from "firebase/auth";
 import { auth } from "../../Firebase/Firebase.config";
+import axios from "axios";
 
 const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null); // Track the current authenticated user

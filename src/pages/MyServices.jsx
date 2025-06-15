@@ -5,6 +5,7 @@ import { AuthContext } from "../contexts/AuthContext/AuthContext";
 import LoadingSpinner from "../components/LoadingSpinner";
 import { FaTrash } from "react-icons/fa6";
 import { FaEdit } from "react-icons/fa";
+import useAxiosSecure from "../hooks/useAxiosSecure";
 
 const MyServices = () => {
   const { user } = use(AuthContext);
@@ -12,15 +13,14 @@ const MyServices = () => {
   const [selectedService, setSelectedService] = useState(null);
   const [updatedData, setUpdatedData] = useState({});
   const [loading, setLoading] = useState(true);
+  const axiosSecure = useAxiosSecure();
 
   useEffect(() => {
     const fetchUserServices = async () => {
       if (user?.email) {
         try {
           setLoading(true);
-          const res = await axios.get(
-            `${import.meta.env.VITE_API_URL}/my-services/${user.email}`
-          );
+          const res = await axiosSecure.get(`/my-services/${user.email}`);
           setServices(res.data);
         } catch (err) {
           console.error("Failed to fetch services:", err);
@@ -46,7 +46,7 @@ const MyServices = () => {
 
     if (confirmed.isConfirmed) {
       try {
-        await axios.delete(`${import.meta.env.VITE_API_URL}/services/${id}`);
+        await axiosSecure.delete(`/services/${id}`);
         setServices((prev) => prev.filter((s) => s._id !== id));
         Swal.fire("Deleted!", "Service has been deleted.", "success");
       } catch (error) {
@@ -59,10 +59,7 @@ const MyServices = () => {
     e.preventDefault();
 
     try {
-      await axios.put(
-        `${import.meta.env.VITE_API_URL}/services/${selectedService._id}`,
-        updatedData
-      );
+      await axiosSecure.put(`/services/${selectedService._id}`, updatedData);
       Swal.fire("Updated!", "Service has been updated.", "success");
 
       // Update local state

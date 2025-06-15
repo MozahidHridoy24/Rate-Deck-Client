@@ -5,12 +5,14 @@ const ServiceCard = ({ service }) => {
   const { image, title, description, category, price, _id } = service;
 
   return (
-    <div className="bg-white border border-gray-200 rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition duration-300">
-      <img
-        src={image}
-        alt={title}
-        className="w-full h-48 object-cover rounded-t-xl"
-      />
+    <div className="bg-white border border-primary flex flex-col justify-between rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition duration-300">
+      <div>
+        <img
+          src={image}
+          alt={title}
+          className="w-full h-48 object-cover rounded-t-xl "
+        />
+      </div>
 
       <div className="p-5 space-y-3">
         <h3 className="text-lg font-bold text-primary">{title}</h3>
@@ -32,15 +34,12 @@ const ServiceCard = ({ service }) => {
           <span className="font-semibold text-black">Price:</span>{" "}
           <span className="text-secondary font-bold">${price}</span>
         </p>
+      </div>
 
-        <div className="pt-3">
-          <Link
-            to={`/services/${_id}`}
-            className="btn btn-sm btn-primary w-full"
-          >
-            See Details
-          </Link>
-        </div>
+      <div className="pt-3 p-5 space-y-3">
+        <Link to={`/services/${_id}`} className="btn btn-sm btn-primary w-full">
+          See Details
+        </Link>
       </div>
     </div>
   );

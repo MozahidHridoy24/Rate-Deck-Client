@@ -4,6 +4,7 @@ import axios from "axios";
 import LoadingSpinner from "../components/LoadingSpinner";
 import { FaEdit, FaStar, FaTrash } from "react-icons/fa";
 import Swal from "sweetalert2";
+import useAxiosSecure from "../hooks/useAxiosSecure";
 
 const MyReviews = () => {
   const { user } = use(AuthContext);
@@ -12,15 +13,14 @@ const MyReviews = () => {
   const [updatedText, setUpdatedText] = useState("");
   const [updatedRatings, setUpdatedRatings] = useState(0);
   const [loading, setLoading] = useState(true);
+  const axiosInstance = useAxiosSecure();
 
   useEffect(() => {
     const fetchUserReviews = async () => {
       if (user?.email) {
         try {
           setLoading(true);
-          const res = await axios.get(
-            `${import.meta.env.VITE_API_URL}/reviews/${user.email}`
-          );
+          const res = await axiosInstance.get(`/reviews/${user.email}`);
           setReviews(res.data);
         } catch (err) {
           console.error("Failed to fetch services:", err);
@@ -37,13 +37,10 @@ const MyReviews = () => {
   const handleUpdateReviews = async (e) => {
     e.preventDefault();
     try {
-      await axios.patch(
-        `${import.meta.env.VITE_API_URL}/reviews/${selectedReview._id}`,
-        {
-          text: updatedText,
-          rating: updatedRatings,
-        }
-      );
+      await axiosInstance.patch(`/reviews/${selectedReview._id}`, {
+        text: updatedText,
+        rating: updatedRatings,
+      });
 
       setReviews((prev) =>
         prev.map((r) =>
@@ -72,7 +69,7 @@ const MyReviews = () => {
 
     if (confirm.isConfirmed) {
       try {
-        await axios.delete(`${import.meta.env.VITE_API_URL}/reviews/${id}`);
+        await axiosInstance.delete(`/reviews/${id}`);
         setReviews((prev) => prev.filter((r) => r._id !== id));
         Swal.fire("Deleted!", "Review has been deleted.", "success");
       } catch {
