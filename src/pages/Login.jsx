@@ -58,62 +58,65 @@ const Login = () => {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-base-100">
-      <div className="bg-white shadow-md rounded-lg p-8 max-w-md w-[90%] space-y-6 border border-primary">
-        <h2 className="text-3xl font-bold text-center text-primary">
-          Welcome to Login
-        </h2>
-        <p className="text-center text-gray-500">
-          Please login to access your RateDeck dashboard and manage services.
-        </p>
+    <div>
+      <title>RateDeck | Login</title>
+      <div className="min-h-screen flex items-center justify-center bg-base-100">
+        <div className="bg-white shadow-md rounded-lg p-8 max-w-md w-[90%] space-y-6 border border-primary">
+          <h2 className="text-3xl font-bold text-center text-primary">
+            Welcome to Login
+          </h2>
+          <p className="text-center text-gray-500">
+            Please login to access your RateDeck dashboard and manage services.
+          </p>
 
-        <form onSubmit={handleLogin}>
-          <div className="space-y-4">
-            <input
-              type="email"
-              name="email"
-              placeholder="Email"
-              className="input input-bordered w-full"
-            />
-            <input
-              type="password"
-              name="password"
-              placeholder="Password"
-              className="input input-bordered w-full"
-            />
-            {/* Forgot Password link */}
-            <div className="text-right">
-              <button
-                className="text-sm text-secondary hover:underline focus:outline-none hover:cursor-pointer"
-                type="button"
-              >
-                Forgot Password?
-              </button>
+          <form onSubmit={handleLogin}>
+            <div className="space-y-4">
+              <input
+                type="email"
+                name="email"
+                placeholder="Email"
+                className="input input-bordered w-full"
+              />
+              <input
+                type="password"
+                name="password"
+                placeholder="Password"
+                className="input input-bordered w-full"
+              />
+              {/* Forgot Password link */}
+              <div className="text-right">
+                <button
+                  className="text-sm text-secondary hover:underline focus:outline-none hover:cursor-pointer"
+                  type="button"
+                >
+                  Forgot Password?
+                </button>
+              </div>
+              {/* <div className="text-red-500">{error}</div> */}
+
+              <button className="btn btn-primary w-full">Login</button>
             </div>
-            {/* <div className="text-red-500">{error}</div> */}
+          </form>
+          <div className="divider">OR</div>
 
-            <button className="btn btn-primary w-full">Login</button>
-          </div>
-        </form>
-        <div className="divider">OR</div>
-
-        <button
-          onClick={handleGoogleLogin}
-          className="btn w-full border border-gray-300 bg-secondary text-white hover:shadow-lg"
-        >
-          <FcGoogle size={20} className="mr-2" />
-          Continue with Google
-        </button>
-
-        <p className="text-center text-sm text-gray-600">
-          Don't have an account?
-          <Link
-            to="/register"
-            className="text-secondary font-semibold ml-1 hover:underline"
+          <button
+            onClick={handleGoogleLogin}
+            className="btn w-full border border-gray-300 bg-secondary text-white hover:shadow-lg"
           >
-            Register here
-          </Link>
-        </p>
+            <FcGoogle size={20} className="mr-2" />
+            Continue with Google
+          </button>
+
+          <p className="text-center text-sm text-gray-600">
+            Don't have an account?
+            <Link
+              to="/register"
+              className="text-secondary font-semibold ml-1 hover:underline"
+            >
+              Register here
+            </Link>
+          </p>
+        </div>
       </div>
     </div>
   );

@@ -7,6 +7,7 @@ import MeetOurPartner from "../components/MeetOurPartner";
 import { motion } from "motion/react";
 import { Link } from "react-router";
 import SuccessStories from "../components/SuccessStories";
+import { Helmet } from "react-helmet";
 
 const Home = () => {
   const [services, setServices] = useState([]);
@@ -32,6 +33,8 @@ const Home = () => {
 
   return (
     <div>
+      <title>RateDeck | Home</title>
+      <meta name="description" content="Welcome to our website" />
       {/* Banner Section */}
 
       <Banner></Banner>
