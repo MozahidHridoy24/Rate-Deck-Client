@@ -7,7 +7,6 @@ import Rating from "react-rating";
 import { FaStar } from "react-icons/fa";
 import LoadingSpinner from "../components/LoadingSpinner";
 import useAxiosSecure from "../hooks/useAxiosSecure";
-import { Helmet } from "react-helmet";
 
 const ServiceDetails = () => {
   const { user, loading } = use(AuthContext);

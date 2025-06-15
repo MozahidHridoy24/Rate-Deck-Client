@@ -5,9 +5,8 @@ import ServiceCard from "../components/ServiceCard";
 import Banner from "../components/Banner";
 import MeetOurPartner from "../components/MeetOurPartner";
 import { motion } from "motion/react";
-import { Link } from "react-router";
 import SuccessStories from "../components/SuccessStories";
-import { Helmet } from "react-helmet";
+import Stats from "../components/Stats";
 
 const Home = () => {
   const [services, setServices] = useState([]);
@@ -56,6 +55,8 @@ const Home = () => {
       )}
       {/* Meet our partner */}
       <MeetOurPartner></MeetOurPartner>
+      {/* stats */}
+      <Stats></Stats>
       {/* Extra section 1 Success Stories */}
       <SuccessStories></SuccessStories>
       {/* Extra section 2 FAQ*/}

@@ -78,17 +78,17 @@ const Navbar = () => {
   );
 
   return (
-    <div className="navbar bg-base-100 shadow-lg px-4 md:px-8 sticky top-0 z-50">
+    <div className="navbar bg-gradient-to-r from-[#ccd5ae] to-[#faedcd] shadow-lg px-4 md:px-8 sticky top-0 z-50">
       {/* Logo */}
       <div className="navbar-start">
-        <Link to="/" className="text-xl font-bold text-primary">
+        <Link to="/" className="text-2xl font-extrabold text-primary">
           Rate<span className="text-secondary">Deck</span>
         </Link>
       </div>
 
       {/* Desktop Menu */}
       <div className="navbar-center hidden md:flex">
-        <ul className="menu menu-horizontal px-1 gap-1">{navLinks}</ul>
+        <ul className=" menu-horizontal px-1 gap-5 text-primary">{navLinks}</ul>
       </div>
 
       {/* Right Section */}
@@ -111,7 +111,7 @@ const Navbar = () => {
             </div>
             <button
               onClick={handleLogout}
-              className="btn btn-sm btn-outline hidden md:flex items-center gap-1 hover:bg-secondary hover:text-white"
+              className="btn btn-sm btn-outline text-primary hidden md:flex items-center gap-1 hover:bg-secondary hover:text-white"
             >
               <FaSignOutAlt /> Logout
             </button>
@@ -120,7 +120,7 @@ const Navbar = () => {
           <div className="hidden md:flex gap-2">
             <Link
               to="/login"
-              className="btn btn-sm btn-outline flex items-center gap-1 hover:bg-secondary"
+              className="btn btn-sm btn-outline text-primary flex items-center gap-1 hover:bg-secondary hover:text-white"
             >
               <FaSignInAlt /> Login
             </Link>
@@ -141,7 +141,7 @@ const Navbar = () => {
         </label>
         <ul
           tabIndex={0}
-          className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
+          className=" menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
         >
           {navLinks}
           {user ? (
@@ -156,14 +156,28 @@ const Navbar = () => {
           ) : (
             <>
               <li>
-                <Link to="/login" className="flex items-center gap-1">
+                <NavLink
+                  to="/login"
+                  className={({ isActive }) =>
+                    `flex items-center gap-1 font-medium ${
+                      isActive ? "underline text-secondary" : ""
+                    }`
+                  }
+                >
                   Login
-                </Link>
+                </NavLink>
               </li>
               <li>
-                <Link to="/register" className="flex items-center gap-1">
+                <NavLink
+                  to="/register"
+                  className={({ isActive }) =>
+                    `flex items-center gap-1 font-medium ${
+                      isActive ? "underline text-secondary" : ""
+                    }`
+                  }
+                >
                   Register
-                </Link>
+                </NavLink>
               </li>
             </>
           )}
