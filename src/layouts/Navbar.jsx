@@ -8,6 +8,7 @@ import {
 } from "react-icons/fa";
 import { use } from "react";
 import { AuthContext } from "../contexts/AuthContext/AuthContext";
+import logo from "../assets/logo.png";
 
 const Navbar = () => {
   const navigate = useNavigate();
@@ -78,10 +79,18 @@ const Navbar = () => {
   );
 
   return (
-    <div className="navbar bg-gradient-to-r from-[#ccd5ae] to-[#faedcd] shadow-lg px-4 md:px-8 sticky top-0 z-50">
+    <div className="navbar shadow-lg px-4 md:px-8 sticky top-0 left-0 z-30 bg-white">
       {/* Logo */}
       <div className="navbar-start">
-        <Link to="/" className="text-2xl font-extrabold text-primary">
+        <Link
+          to="/"
+          className="flex items-center text-2xl font-extrabold text-primary"
+        >
+          <img
+            src={logo}
+            alt="RateDeck Logo"
+            className="w-8 h-8 object-contain m-2"
+          />
           Rate<span className="text-secondary">Deck</span>
         </Link>
       </div>

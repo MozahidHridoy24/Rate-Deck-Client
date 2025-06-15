@@ -1,12 +1,32 @@
-# React + Vite
+# RateDeck
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+[Live Site 🔗](https://rate-deck.web.app/)
 
-Currently, two official plugins are available:
+**RateDeck** is a modern service review platform that helps users discover, rate, and review services with ease. Built with a responsive and user-friendly interface, RateDeck empowers both consumers and service providers to connect through feedback and trust.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## Expanding the ESLint configuration
+## 🚀 Features
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- 🔍 **Discover Services** – Browse a wide range of services rated by real users.
+- ✍️ **Add Reviews** – Authenticated users can share their service experiences through text and ratings.
+- 🔐 **Secure Authentication** – Login and registration handled via Firebase with email and Google sign-in.
+- 📊 **Interactive UI** – Animated counters, rating system, and interactive UI using React components and Lottie animations.
+- 🧑‍💼 **My Services & Reviews** – Manage your added services and see only your own reviews with CRUD functionality.
+
+---
+
+## 🛠 Tech Stack
+
+- **React** – UI Library
+- **React Router v7** – Client-side routing
+- **Tailwind CSS v4** – Styling with utility-first CSS
+- **DaisyUI** – Tailwind-based UI components
+- **Firebase** – Authentication and hosting
+- **MongoDB** – Data storage (via custom server)
+- **Axios** – HTTP client
+- **Lottie React** – Lottie animations
+- **React Rating / CountUp / Icons** – Additional UI enhancements
+- **SweetAlert2** – Beautiful alert messages
+
+---
