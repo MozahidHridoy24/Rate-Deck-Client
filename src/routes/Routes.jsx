@@ -57,7 +57,6 @@ export const router = createBrowserRouter([
       },
       {
         path: "/all-services",
-        loader: () => axios(`${import.meta.env.VITE_API_URL}/services`),
         Component: AllServices,
       },
       {
