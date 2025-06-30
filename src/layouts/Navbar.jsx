@@ -6,9 +6,10 @@ import {
   FaUserPlus,
   FaBars,
 } from "react-icons/fa";
-import { use } from "react";
 import { AuthContext } from "../contexts/AuthContext/AuthContext";
 import logo from "../assets/logo.png";
+import { use } from "react";
+import ThemeToggle from "../components/ThemeToggle";
 
 const Navbar = () => {
   const navigate = useNavigate();
@@ -79,7 +80,7 @@ const Navbar = () => {
   );
 
   return (
-    <div className="navbar shadow-lg px-4 md:px-8 sticky top-0 left-0 z-30 bg-white">
+    <div className="navbar shadow-lg px-4 md:px-8 sticky top-0 left-0 z-30 bg-base-100">
       {/* Logo */}
       <div className="navbar-start">
         <Link
@@ -102,6 +103,8 @@ const Navbar = () => {
 
       {/* Right Section */}
       <div className="navbar-end gap-3">
+        <ThemeToggle></ThemeToggle>
+
         {user ? (
           <div className="flex items-center gap-5">
             <div

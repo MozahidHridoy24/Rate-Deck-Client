@@ -80,7 +80,7 @@ const Register = () => {
       <title>RateDeck | Register</title>
 
       <div className="min-h-screen flex items-center justify-center bg-base-200 px-4 py-10">
-        <div className="bg-white shadow-xl rounded-xl p-10 max-w-md w-full border border-primary">
+        <div className="bg-base-100 shadow-xl rounded-xl p-10 max-w-md w-full border border-primary">
           <h2 className="text-3xl font-bold text-center text-primary mb-2">
             Create an Account
           </h2>

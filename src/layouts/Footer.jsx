@@ -9,18 +9,18 @@ import { Link } from "react-router";
 
 const Footer = () => {
   return (
-    <footer className="bg-base-200 text-gray-900 border-t border-primary">
+    <footer className="bg-base-200 text-base-content border-t border-primary">
       <div className="max-w-7xl mx-auto px-6 md:px-12 py-12 grid grid-cols-1 md:grid-cols-3 gap-10">
         {/* Brand Info */}
         <div>
           <h2 className="text-3xl font-extrabold text-primary">
             Rate<span className="text-secondary">Deck</span>
           </h2>
-          <p className="mt-4 text-gray-700 leading-relaxed max-w-sm">
+          <p className="mt-4  leading-relaxed max-w-sm">
             Your trusted service review system. Discover and rate top services
             with confidence.
           </p>
-          <p className="mt-4 text-gray-600 font-medium">
+          <p className="mt-4  font-medium">
             Email:{" "}
             <a
               href="mailto:hridoy1407@gmail.com"
@@ -40,7 +40,7 @@ const Footer = () => {
             <li>
               <Link
                 to="/"
-                className="text-gray-700 hover:text-secondary transition-colors duration-300 font-medium"
+                className=" hover:text-secondary transition-colors duration-300 font-medium"
               >
                 Home
               </Link>
@@ -48,7 +48,7 @@ const Footer = () => {
             <li>
               <Link
                 to="/all-services"
-                className="text-gray-700 hover:text-secondary transition-colors duration-300 font-medium"
+                className=" hover:text-secondary transition-colors duration-300 font-medium"
               >
                 Services
               </Link>
@@ -56,7 +56,7 @@ const Footer = () => {
             <li>
               <Link
                 to="/my-reviews"
-                className="text-gray-700 hover:text-secondary transition-colors duration-300 font-medium"
+                className=" hover:text-secondary transition-colors duration-300 font-medium"
               >
                 Reviews
               </Link>
@@ -64,7 +64,7 @@ const Footer = () => {
             <li>
               <Link
                 to="/contact"
-                className="text-gray-700 hover:text-secondary transition-colors duration-300 font-medium"
+                className=" hover:text-secondary transition-colors duration-300 font-medium"
               >
                 Contact
               </Link>

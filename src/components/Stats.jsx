@@ -13,7 +13,6 @@ const Stats = () => {
 
   const [loading, setLoading] = useState(true);
 
-  // Use intersection observer hook
   const { ref, inView } = useInView({
     triggerOnce: true,
     threshold: 0.3,
@@ -48,43 +47,55 @@ const Stats = () => {
   }
 
   return (
-    // Attach the ref here to detect visibility of this whole section
-    <div className="bg-base-200 mt-1">
-      <div
-        ref={ref}
-        className="w-11/12 mx-auto py-10 grid grid-cols-1 md:grid-cols-3 gap-8 text-center"
-      >
-        <div className="shadow p-6 rounded-lg bg-white">
-          <h2 className="text-xl font-semibold mb-2">Total Users</h2>
-          <div className="text-3xl font-bold text-primary">
-            {inView ? (
-              <CountUp end={stats.users} duration={2} separator="," />
-            ) : (
-              0
-            )}
-            +
+    <div className="bg-base-200 py-10 mt-1">
+      <div className="w-11/12 mx-auto">
+        <h2 className="text-3xl font-bold text-center text-primary mb-10">
+          Platform Statistics
+        </h2>
+        <div
+          ref={ref}
+          className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center"
+        >
+          <div className="shadow p-6 rounded-lg bg-white dark:bg-base-100">
+            <h3 className="text-xl font-semibold mb-2 text-base-content ">
+              Total Active Users
+            </h3>
+            <div className="text-3xl font-bold text-primary">
+              {inView ? (
+                <CountUp end={stats.users} duration={2} separator="," />
+              ) : (
+                0
+              )}
+              +
+            </div>
           </div>
-        </div>
-        <div className="shadow p-6 rounded-lg bg-white">
-          <h2 className="text-xl font-semibold mb-2">Total Services</h2>
-          <div className="text-3xl font-bold text-secondary">
-            {inView ? (
-              <CountUp end={stats.services} duration={2} separator="," />
-            ) : (
-              0
-            )}
-            +
+
+          <div className="shadow p-6 rounded-lg bg-white dark:bg-base-100">
+            <h3 className="text-xl font-semibold mb-2 text-base-content ">
+              Total Services
+            </h3>
+            <div className="text-3xl font-bold text-secondary">
+              {inView ? (
+                <CountUp end={stats.services} duration={2} separator="," />
+              ) : (
+                0
+              )}
+              +
+            </div>
           </div>
-        </div>
-        <div className="shadow p-6 rounded-lg bg-white">
-          <h2 className="text-xl font-semibold mb-2">Total Reviews</h2>
-          <div className="text-3xl font-bold text-accent">
-            {inView ? (
-              <CountUp end={stats.reviews} duration={2} separator="," />
-            ) : (
-              0
-            )}
-            +
+
+          <div className="shadow p-6 rounded-lg bg-white dark:bg-base-100">
+            <h3 className="text-xl font-semibold mb-2 text-base-content ">
+              Total Reviews
+            </h3>
+            <div className="text-3xl font-bold text-accent">
+              {inView ? (
+                <CountUp end={stats.reviews} duration={2} separator="," />
+              ) : (
+                0
+              )}
+              +
+            </div>
           </div>
         </div>
       </div>

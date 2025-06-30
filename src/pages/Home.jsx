@@ -45,7 +45,7 @@ const Home = () => {
             <h2 className="text-3xl font-bold text-center mb-8 text-primary">
               Featured Services
             </h2>
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
               {services.map((service) => (
                 <ServiceCard key={service._id} service={service}></ServiceCard>
               ))}
@@ -60,7 +60,7 @@ const Home = () => {
       {/* Extra section 1 Success Stories */}
       <SuccessStories></SuccessStories>
       {/* Extra section 2 FAQ*/}
-      <section className=" bg-base-200 mt-1" id="faq">
+      <section className=" bg-base-200 mt-1 text-base-content" id="faq">
         <div className=" w-11/12 mx-auto py-10 px-4">
           <h2 className="text-3xl font-bold text-center mb-10 text-primary">
             Frequently Asked Questions
@@ -72,7 +72,7 @@ const Home = () => {
               <div className="collapse-title text-lg font-medium text-primary">
                 What is RateDeck?
               </div>
-              <div className="collapse-content text-gray-600">
+              <div className="collapse-content">
                 <p>
                   RateDeck is a platform where users can discover and share
                   reviews about different services to make informed decisions.
@@ -85,7 +85,7 @@ const Home = () => {
               <div className="collapse-title text-lg font-medium text-primary">
                 How do I leave a review?
               </div>
-              <div className="collapse-content text-gray-600">
+              <div className="collapse-content">
                 <p>
                   To leave a review, sign in and navigate to a service’s detail
                   page. You'll find a review form to submit your feedback.
@@ -98,7 +98,7 @@ const Home = () => {
               <div className="collapse-title text-lg font-medium text-primary">
                 Can I edit or delete my reviews?
               </div>
-              <div className="collapse-content text-gray-600">
+              <div className="collapse-content">
                 <p>
                   Yes, you can manage your reviews from your dashboard under the
                   "My Reviews" section.
@@ -111,7 +111,7 @@ const Home = () => {
               <div className="collapse-title text-lg font-medium text-primary">
                 Are reviews moderated?
               </div>
-              <div className="collapse-content text-gray-600">
+              <div className="collapse-content">
                 <p>
                   All reviews are subject to moderation to ensure they comply
                   with community standards and remain constructive.
@@ -124,7 +124,7 @@ const Home = () => {
               <div className="collapse-title text-lg font-medium text-primary">
                 Is RateDeck free to use?
               </div>
-              <div className="collapse-content text-gray-600">
+              <div className="collapse-content">
                 <p>
                   Absolutely. You can use RateDeck to browse and post reviews
                   without any cost.

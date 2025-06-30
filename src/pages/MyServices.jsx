@@ -31,7 +31,7 @@ const MyServices = () => {
     };
 
     fetchUserServices();
-  }, [user?.email]);
+  }, [user?.email, axiosSecure]);
 
   const handleDelete = async (id) => {
     const confirmed = await Swal.fire({
@@ -42,6 +42,7 @@ const MyServices = () => {
       confirmButtonColor: "#d33",
       cancelButtonColor: "#3085d6",
       confirmButtonText: "Yes, delete it!",
+      background: "linear-gradient(to right, #ffe6e6, #ffffff)",
     });
 
     if (confirmed.isConfirmed) {
@@ -89,8 +90,9 @@ const MyServices = () => {
         ) : (
           <div className=" overflow-x-auto">
             <table className="table w-full table-auto bg-base-100 shadow rounded-lg">
-              <thead className="bg-secondary ">
+              <thead className="bg-secondary">
                 <tr className="text-lg text-primary">
+                  <th>#</th>
                   <th className="break-words">Title</th>
                   <th className="break-words">Category</th>
                   <th className="break-words">Price</th>
@@ -98,9 +100,10 @@ const MyServices = () => {
                 </tr>
               </thead>
               <tbody>
-                {services.map((s) => (
-                  <tr key={s._id} className="text-sm  align-top">
-                    <td className="break-words  max-w-[140px] font-semibold text-base-content">
+                {services.map((s, i) => (
+                  <tr key={s._id} className="text-sm align-top">
+                    <td className="text-base-content font-bold">{i + 1}</td>
+                    <td className="break-words max-w-[140px] font-semibold text-base-content">
                       {s.title}
                     </td>
                     <td className="break-words max-w-[120px] text-base-content">
@@ -108,7 +111,7 @@ const MyServices = () => {
                     </td>
                     <td className="text-base-content">${s.price}</td>
                     <td className="break-words">
-                      <div className="flex flex-wrap gap-2 ">
+                      <div className="flex flex-wrap gap-2">
                         <button
                           onClick={() => {
                             setSelectedService(s);
@@ -146,7 +149,7 @@ const MyServices = () => {
         {/* Update Modal */}
         {selectedService && (
           <div className="fixed inset-0 bg-black/40 backdrop-blur-sm bg-opacity-40 flex items-center justify-center z-50">
-            <div className="bg-white rounded-lg p-6 w-full max-w-lg relative overflow-y-auto max-h-[90vh]">
+            <div className="bg-base-100 rounded-lg p-6 w-full max-w-lg relative overflow-y-auto max-h-[90vh]">
               <h3 className="text-xl font-semibold mb-4 text-primary">
                 Update Service
               </h3>

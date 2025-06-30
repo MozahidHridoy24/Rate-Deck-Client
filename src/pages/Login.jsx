@@ -60,8 +60,8 @@ const Login = () => {
   return (
     <div>
       <title>RateDeck | Login</title>
-      <div className="min-h-screen flex items-center justify-center bg-base-100">
-        <div className="bg-white shadow-md rounded-lg p-8 max-w-md w-[90%] space-y-6 border border-primary">
+      <div className="min-h-screen flex items-center justify-center bg-base-200">
+        <div className="bg-base-100 shadow-md rounded-lg p-8 max-w-md w-[90%] space-y-6 border border-primary">
           <h2 className="text-3xl font-bold text-center text-primary">
             Login Now!
           </h2>

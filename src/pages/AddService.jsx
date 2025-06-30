@@ -55,7 +55,7 @@ const AddService = () => {
     <div>
       <title>RateDeck | Add Services</title>
       <div className="bg-base-200 p-10">
-        <div className="max-w-2xl mx-auto p-6 bg-white shadow-md rounded ">
+        <div className="max-w-2xl mx-auto p-6 bg-base-100 shadow-md rounded ">
           <h2 className="text-2xl font-bold mb-6 text-center text-primary">
             Add New Service
           </h2>

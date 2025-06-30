@@ -83,7 +83,7 @@ const MyReviews = () => {
   return (
     <div>
       <title>RateDeck | My Reviews</title>
-      <section className="max-w-6xl w-11/12 mx-auto px-4 py-10">
+      <section className=" w-11/12 mx-auto px-4 py-10 text-base-content">
         <h2 className="text-3xl font-bold text-center mb-8 text-primary">
           My Reviews
         </h2>
@@ -102,7 +102,7 @@ const MyReviews = () => {
                   <h3 className="text-xl font-bold text-primary">
                     {review.serviceTitle}
                   </h3>
-                  <p className="text-gray-700 mt-1">{review.text}</p>
+                  <p className=" mt-1">{review.text}</p>
                   <div className="flex items-center gap-1 mt-2 text-yellow-500">
                     {Array.from({ length: review.rating }, (_, i) => (
                       <FaStar key={i} />
@@ -137,25 +137,25 @@ const MyReviews = () => {
         )}
         {/*  Update Modal */}
         {selectedReview && (
-          <div className="fixed inset-0 bg-black/40 backdrop-blur-sm bg-opacity-40 z-50 flex justify-center items-center">
-            <div className="bg-white p-6 rounded-xl max-w-md w-full relative">
+          <div className="fixed inset-0 bg-black/40 backdrop-blur-sm bg-opacity-40 z-50 flex justify-center items-center text-base-content">
+            <div className="bg-base-100 p-6 rounded-xl max-w-md w-full relative">
               <h3 className="text-xl font-semibold mb-4 text-primary">
                 Update Review
               </h3>
               <form onSubmit={handleUpdateReviews} className="space-y-4">
                 <div>
-                  <label className="block text-sm font-medium text-gray-700">
+                  <label className="block text-sm font-medium ">
                     Service Title
                   </label>
                   <input
                     type="text"
                     value={selectedReview.serviceTitle}
                     readOnly
-                    className="input input-bordered w-full bg-gray-100"
+                    className="input input-bordered w-full "
                   />
                 </div>
                 <div>
-                  <label className="block text-sm font-medium text-gray-700">
+                  <label className="block text-sm font-medium ">
                     Review Text
                   </label>
                   <textarea
@@ -165,9 +165,7 @@ const MyReviews = () => {
                   />
                 </div>
                 <div>
-                  <label className="block text-sm font-medium text-gray-700">
-                    Rating
-                  </label>
+                  <label className="block text-sm font-medium ">Rating</label>
                   <input
                     type="number"
                     min="1"

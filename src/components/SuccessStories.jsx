@@ -29,17 +29,17 @@ const SuccessStories = () => {
   return (
     <section className="py-10 bg-base-200 mt-1">
       <div className="w-11/12 mx-auto px-4 text-center">
-        <h2 className="text-3xl font-bold text-primary mb-10">
+        <h2 className="text-3xl font-bold text-primary  mb-10">
           Success Stories
         </h2>
         <div className="grid md:grid-cols-3 gap-8">
           {testimonials.map((t, i) => (
             <div
               key={i}
-              className="bg-base-100 shadow-xl rounded-xl p-6 relative text-left"
+              className="bg-base-100 dark:bg-base-100 shadow-xl rounded-xl p-6 relative text-left"
             >
-              <FaQuoteLeft className="text-3xl text-primary mb-4" />
-              <p className="text-gray-700 mb-6">{t.message}</p>
+              <FaQuoteLeft className="text-3xl text-primary dark:text-secondary mb-4" />
+              <p className="text-base-content mb-6">{t.message}</p>
               <div className="flex items-center gap-4">
                 <img
                   src={t.image}
@@ -47,8 +47,10 @@ const SuccessStories = () => {
                   className="w-14 h-14 rounded-full object-cover"
                 />
                 <div>
-                  <h4 className="font-semibold text-base-content">{t.name}</h4>
-                  <p className="text-sm text-gray-500">{t.title}</p>
+                  <h4 className="font-semibold text-base-content ">{t.name}</h4>
+                  <p className="text-sm text-gray-500 dark:text-gray-400">
+                    {t.title}
+                  </p>
                 </div>
               </div>
             </div>

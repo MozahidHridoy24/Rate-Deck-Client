@@ -5,7 +5,7 @@ const ServiceCard = ({ service }) => {
   const { image, title, description, category, price, _id } = service;
 
   return (
-    <div className="bg-white border border-primary flex flex-col justify-between rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition duration-300">
+    <div className="bg-base-100 text-base-content border border-primary flex flex-col justify-between rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition duration-300">
       <div>
         <img
           src={image}
@@ -17,21 +17,18 @@ const ServiceCard = ({ service }) => {
       <div className="p-5 space-y-3">
         <h3 className="text-lg font-bold text-primary">{title}</h3>
 
-        <p className="text-gray-700 text-sm">
-          <span className="font-semibold text-base text-black block mb-1">
-            Description:
-          </span>
+        <p className=" text-sm">
           {description?.length > 100
             ? description.slice(0, 100) + "..."
             : description}
         </p>
 
-        <p className="text-gray-600 text-sm">
-          <span className="font-semibold text-black">Category:</span> {category}
+        <p className=" text-sm">
+          <span className="font-semibold">Category:</span> {category}
         </p>
 
-        <p className="text-gray-600 text-sm">
-          <span className="font-semibold text-black">Price:</span>{" "}
+        <p className=" text-sm">
+          <span className="font-semibold ">Price:</span>{" "}
           <span className="text-secondary font-bold">${price}</span>
         </p>
       </div>
