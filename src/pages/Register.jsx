@@ -3,6 +3,8 @@ import { Link, useLocation, useNavigate } from "react-router";
 import Swal from "sweetalert2";
 import { AuthContext } from "../contexts/AuthContext/AuthContext";
 import { FcGoogle } from "react-icons/fc";
+import registerLottie from "../assets/Lottie/register.json";
+import Lottie from "lottie-react";
 
 const Register = () => {
   const { register, updateUserProfile, googleLogin } = use(AuthContext);
@@ -76,73 +78,82 @@ const Register = () => {
   };
 
   return (
-    <div>
+    <div className="bg-base-200">
       <title>RateDeck | Register</title>
 
-      <div className="min-h-screen flex items-center justify-center bg-base-200 px-4 py-10">
-        <div className="bg-base-100 shadow-xl rounded-xl p-10 max-w-md w-full border border-primary">
-          <h2 className="text-3xl font-bold text-center text-primary mb-2">
-            Create an Account
-          </h2>
-          <p className="text-center text-gray-500 mb-6">
-            Register to manage services with RateDeck.
-          </p>
+      <div className="w-11/12 mx-auto flex justify-around items-center">
+        <div className="min-h-screen w-1/2 flex items-center justify-center px-4 py-4">
+          <div className="bg-base-100 shadow-xl rounded-xl p-10 max-w-md w-full border border-primary">
+            <h2 className="text-3xl font-bold text-center text-primary mb-2">
+              Create an Account
+            </h2>
+            <p className="text-center text-gray-500 mb-6">
+              Register to manage services with RateDeck.
+            </p>
 
-          <form onSubmit={handleRegister}>
-            <div className="space-y-4">
-              <input
-                type="text"
-                name="name"
-                placeholder="Full Name"
-                className="input input-bordered w-full"
-                required
-              />
-              <input
-                type="email"
-                name="email"
-                placeholder="Email"
-                className="input input-bordered w-full"
-                required
-              />
-              <input
-                type="text"
-                name="photoURL"
-                placeholder="Photo URL"
-                className="input input-bordered w-full"
-              />
-              <input
-                type="password"
-                name="password"
-                placeholder="Password"
-                className="input input-bordered w-full"
-                required
-              />
-              {error && <p className="text-red-500 text-sm">{error}</p>}
-              <button className="btn btn-primary w-full " type="submit">
-                Register
-              </button>
-            </div>
-          </form>
+            <form onSubmit={handleRegister}>
+              <div className="space-y-4">
+                <input
+                  type="text"
+                  name="name"
+                  placeholder="Full Name"
+                  className="input input-bordered w-full"
+                  required
+                />
+                <input
+                  type="email"
+                  name="email"
+                  placeholder="Email"
+                  className="input input-bordered w-full"
+                  required
+                />
+                <input
+                  type="text"
+                  name="photoURL"
+                  placeholder="Photo URL"
+                  className="input input-bordered w-full"
+                />
+                <input
+                  type="password"
+                  name="password"
+                  placeholder="Password"
+                  className="input input-bordered w-full"
+                  required
+                />
+                {error && <p className="text-red-500 text-sm">{error}</p>}
+                <button className="btn btn-primary w-full " type="submit">
+                  Register
+                </button>
+              </div>
+            </form>
 
-          <div className="divider">OR</div>
+            <div className="divider">OR</div>
 
-          <button
-            onClick={handleGoogleLogin}
-            className="btn w-full border border-gray-300 bg-secondary text-white hover:bg-gray-500"
-          >
-            <FcGoogle size={20} className="mr-2" />
-            Continue with Google
-          </button>
-
-          <p className="text-center text-sm text-gray-600 mt-6">
-            Already have an account?{" "}
-            <Link
-              to="/login"
-              className="text-secondary font-semibold hover:underline"
+            <button
+              onClick={handleGoogleLogin}
+              className="btn w-full border border-gray-300 bg-secondary text-white hover:bg-gray-500"
             >
-              Login here
-            </Link>
-          </p>
+              <FcGoogle size={20} className="mr-2" />
+              Continue with Google
+            </button>
+
+            <p className="text-center text-sm text-gray-600 mt-6">
+              Already have an account?{" "}
+              <Link
+                to="/login"
+                className="text-secondary font-semibold hover:underline"
+              >
+                Login here
+              </Link>
+            </p>
+          </div>
+        </div>
+        <div className="hidden md:block w-1/2 mb-6">
+          <Lottie
+            animationData={registerLottie}
+            loop
+            className="w-[80%] h-[80%]"
+          />
         </div>
       </div>
     </div>
