@@ -89,7 +89,7 @@ const ServiceDetails = () => {
 
   return (
     <div>
-      <div className="max-w-5xl mx-auto px-4 py-10">
+      <div className="w-11/12 mx-auto px-4 py-10 text-base-content">
         <div className="grid md:grid-cols-2 gap-10 items-start">
           <img
             src={image}
@@ -98,7 +98,7 @@ const ServiceDetails = () => {
           />
           <div>
             <h2 className="text-4xl font-bold text-primary mb-2">{title}</h2>
-            <p className="text-gray-600 mb-3">Description:{description}</p>
+            <p className=" mb-3">{description}</p>
             <p className="mb-1">
               <strong>Category:</strong> {category}
             </p>
@@ -125,7 +125,7 @@ const ServiceDetails = () => {
         {/* Add Review Form */}
         <form
           onSubmit={handleReviewSubmit}
-          className="mt-12 bg-white shadow p-6 rounded"
+          className="mt-12 bg-base-100 shadow p-6 rounded"
         >
           <h3 className="text-xl font-bold text-primary mb-4">
             Add Your Review
@@ -197,7 +197,7 @@ const ServiceDetails = () => {
                     emptySymbol={<FaStar className="text-gray-400" />}
                     fullSymbol={<FaStar className="text-yellow-500" />}
                   />
-                  <p className="mt-2 text-gray-700">{r.text}</p>
+                  <p className="mt-2 text-gray-500 ">{r.text}</p>
                 </div>
               ))}
             </div>

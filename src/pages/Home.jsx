@@ -69,10 +69,10 @@ const Home = () => {
           <div className="space-y-4">
             <div className="collapse collapse-plus bg-base-100 shadow">
               <input type="checkbox" />
-              <div className="collapse-title text-lg font-medium text-primary">
+              <div className="collapse-title text-lg font-medium ">
                 What is RateDeck?
               </div>
-              <div className="collapse-content">
+              <div className="collapse-content text-sm">
                 <p>
                   RateDeck is a platform where users can discover and share
                   reviews about different services to make informed decisions.
@@ -82,10 +82,10 @@ const Home = () => {
 
             <div className="collapse collapse-plus bg-base-100 shadow">
               <input type="checkbox" />
-              <div className="collapse-title text-lg font-medium text-primary">
+              <div className="collapse-title text-lg font-medium ">
                 How do I leave a review?
               </div>
-              <div className="collapse-content">
+              <div className="collapse-content text-sm">
                 <p>
                   To leave a review, sign in and navigate to a service’s detail
                   page. You'll find a review form to submit your feedback.
@@ -95,10 +95,10 @@ const Home = () => {
 
             <div className="collapse collapse-plus bg-base-100 shadow">
               <input type="checkbox" />
-              <div className="collapse-title text-lg font-medium text-primary">
+              <div className="collapse-title text-lg font-medium ">
                 Can I edit or delete my reviews?
               </div>
-              <div className="collapse-content">
+              <div className="collapse-content text-sm">
                 <p>
                   Yes, you can manage your reviews from your dashboard under the
                   "My Reviews" section.
@@ -108,10 +108,10 @@ const Home = () => {
 
             <div className="collapse collapse-plus bg-base-100 shadow">
               <input type="checkbox" />
-              <div className="collapse-title text-lg font-medium text-primary">
+              <div className="collapse-title text-lg font-medium ">
                 Are reviews moderated?
               </div>
-              <div className="collapse-content">
+              <div className="collapse-content text-sm">
                 <p>
                   All reviews are subject to moderation to ensure they comply
                   with community standards and remain constructive.
@@ -121,10 +121,10 @@ const Home = () => {
 
             <div className="collapse collapse-plus bg-base-100 shadow">
               <input type="checkbox" />
-              <div className="collapse-title text-lg font-medium text-primary">
+              <div className="collapse-title text-lg font-medium ">
                 Is RateDeck free to use?
               </div>
-              <div className="collapse-content">
+              <div className="collapse-content text-sm">
                 <p>
                   Absolutely. You can use RateDeck to browse and post reviews
                   without any cost.
