@@ -11,6 +11,7 @@ import PrivateRoute from "./PrivateRoute";
 import ServiceDetails from "../pages/ServiceDetails";
 import MyServices from "../pages/MyServices";
 import MyReviews from "../pages/MyReviews";
+import ContactUs from "../pages/ContactUs";
 
 export const router = createBrowserRouter([
   {
@@ -30,6 +31,10 @@ export const router = createBrowserRouter([
       {
         path: "/register",
         Component: Register,
+      },
+      {
+        path: "/contact",
+        Component: ContactUs,
       },
       {
         path: "/add-service",
