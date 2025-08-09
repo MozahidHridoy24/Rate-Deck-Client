@@ -76,6 +76,16 @@ const Navbar = () => {
           </li>
         </>
       )}
+      <li>
+        <NavLink
+          to="/contact"
+          className={({ isActive }) =>
+            `font-medium ${isActive ? "underline text-secondary" : ""}`
+          }
+        >
+          Contact Us
+        </NavLink>
+      </li>
     </>
   );
 
@@ -97,7 +107,7 @@ const Navbar = () => {
       </div>
 
       {/* Desktop Menu */}
-      <div className="navbar-center hidden md:flex">
+      <div className="navbar-center hidden lg:flex">
         <ul className=" menu-horizontal px-1 gap-5 text-primary">{navLinks}</ul>
       </div>
 
@@ -147,13 +157,13 @@ const Navbar = () => {
       </div>
 
       {/* Mobile Dropdown */}
-      <div className="dropdown dropdown-end md:hidden">
+      <div className="dropdown dropdown-end lg:hidden">
         <label tabIndex={0} className="btn btn-ghost lg:hidden">
           <FaBars className="text-xl text-primary" />
         </label>
         <ul
           tabIndex={0}
-          className=" menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
+          className=" menu-sm dropdown-content  mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52 "
         >
           {navLinks}
           {user ? (
