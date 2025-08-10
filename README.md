@@ -28,5 +28,3 @@
 - **Lottie React** – Lottie animations
 - **React Rating / CountUp / Icons** – Additional UI enhancements
 - **SweetAlert2** – Beautiful alert messages
-
----
